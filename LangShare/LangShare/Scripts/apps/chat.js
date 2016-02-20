@@ -1,6 +1,7 @@
-﻿/// <reference path="../knockout-2.2.0.debug.js" />
-/// <reference path="../jquery-1.8.3.intellisense.js" />
-/// <reference path="../jquery.signalR-1.0.0-rc1.js" />
+﻿/// <reference path="../knockout-3.4.0.debug.js" />
+/// <reference path="../jquery-2.2.0.intellisense.js" />
+/// <reference path="../jquery.signalR-2.2.0.js" />
+
 
 (function () {
 
