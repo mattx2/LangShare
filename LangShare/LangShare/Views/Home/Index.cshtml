@@ -11,6 +11,14 @@
     <script src="~/Scripts/apps/chat.js"></script>
 
 
+<h2><center>Welcome to LangShare!</center></h2>
+    <div align="right" id="users" class="span2">
+        <ul data-bind="foreach: users">
+            <li data-bind="click: setAsPrivateChat, css: { privateChatUser: isPrivateChatUser }">
+                <span data-bind="text: name"></span>
+            </li>
+        </ul>
+
 <div align="center" style="border:3px solid #04B404">
 </head>
 
@@ -44,18 +52,18 @@
             border-radius: 3px;
             margin-bottom: 1px;
             cursor: pointer;
+            margin-left: 0px;
         }
         .privateChatUser {
             background-color: #3A87AD;
         }
+        #txtMsg {
+            width: 500px;
+            margin-left: 0px;
+        }
     </style>
 
 
-
-
-
-
-<h2>Welcome to LangShare!</h2>
 
 <div class="alert alert-success">
     Hello @User.Identity.Name! Start chating...
@@ -69,6 +77,7 @@
     <div class="span8 form-search">
         <input type="text" id="txtMsg" class="input-xxlarge" disabled="disabled" /> 
         <button type="button" id="btnSend" class="btn btn-info" disabled="disabled">Send</button>
+        <div align="left">
         <ul id="messages" data-bind="foreach: messages">
             <li>
                 <span class="label label-important" data-bind="visible: isPrivate">Private</span>
@@ -77,11 +86,5 @@
             </li>
         </ul>
     </div>
-    <div id="users" class="span2">
-        <ul data-bind="foreach: users">
-            <li data-bind="click: setAsPrivateChat, css: { privateChatUser: isPrivateChatUser }">
-                <span data-bind="text: name"></span>
-            </li>
-        </ul>
+    
     </div>
-</div>
