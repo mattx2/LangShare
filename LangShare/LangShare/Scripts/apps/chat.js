@@ -48,6 +48,7 @@
             loginHub = $.connection.login,
             $sendBtn = $('#btnSend'),
             $msgTxt = $('#txtMsg');
+            
 
         // turn the logging on for demo purposes
         $.connection.hub.logging = true;
@@ -66,6 +67,7 @@
                 viewModel.isInPrivateChat(false);
                 viewModel.privateChatUser(null);
             }
+
         };
 
         // $.connection.hub.starting(callback)
@@ -102,11 +104,27 @@
         }
 
         function bindClickEvents() {
-
             $msgTxt.keypress(function (e) {
                 var code = (e.keyCode ? e.keyCode : e.which);
                 if (code === 13) {
                     sendMessage();
+           
+
+
+                    var div = document.getElementById("scroller");
+
+
+                    // increase the scroll position by 10 px every 10th of a second
+
+                    setInterval(function () {
+
+                        // make sure it's not at the bottom
+
+                        if (div.scrollTop < div.scrollHeight - div.clientHeight)
+
+                            div.scrollTop += 10; // move down
+
+                    }, 100); // 100 milliseconds
                 }
             });
 
@@ -144,5 +162,6 @@
             $sendBtn.prop('disabled', status);
             $msgTxt.prop('disabled', status);
         }
+
     });
 }());
