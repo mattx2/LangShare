@@ -22,6 +22,8 @@
             viewModel.isInPrivateChat(true);
             $.each(viewModel.users(), function (i, user) {
                 user.isPrivateChatUser(false);
+
+
             });
             self.isPrivateChatUser(true);
         };
@@ -38,6 +40,8 @@
             viewModel.privateChatUser(null);
             $.each(viewModel.users(), function (i, user) {
                 user.isPrivateChatUser(false);
+
+
             });
         }
     };
@@ -94,6 +98,17 @@
                 chatHub.server.getConnectedUsers().done(function (users) {
                     $.each(users, function (i, username) {
                         viewModel.users.push(new User(username));
+
+
+
+                        // AUTO SCROLL FOR USERS
+                        var div = document.getElementById("userlist");
+                        // increase the scroll position by 10 px every 10th of a second
+                        setInterval(function () {
+                            // make sure it's not at the bottom
+                            if (div.scrollTop < div.scrollHeight - div.clientHeight)
+                                div.scrollTop += 10; // move down
+                        }, 100); // 100 milliseconds
                     });
                 });
 
@@ -110,21 +125,15 @@
                     sendMessage();
            
 
-
+                    // AUTO SCROLL FOR MESSAGES
                     var div = document.getElementById("scroller");
-
-
                     // increase the scroll position by 10 px every 10th of a second
-
                     setInterval(function () {
-
                         // make sure it's not at the bottom
-
                         if (div.scrollTop < div.scrollHeight - div.clientHeight)
-
                             div.scrollTop += 10; // move down
-
                     }, 100); // 100 milliseconds
+
                 }
             });
 
