@@ -124,15 +124,10 @@
                 if (code === 13) {
                     sendMessage();
            
+                    $("#scroller").append;
+                    $('#scroller').animate({ scrollTop: $('#scroller').prop("scrollHeight") }, 300);
 
-                    // AUTO SCROLL FOR MESSAGES
-                    var div = document.getElementById("scroller");
-                    // increase the scroll position by 10 px every 10th of a second
-                    setInterval(function () {
-                        // make sure it's not at the bottom
-                        if (div.scrollTop < div.scrollHeight - div.clientHeight)
-                            div.scrollTop += 10; // move down
-                    }, 100); // 100 milliseconds
+ // INPUT MESSAGE JS
 
                 }
             });
@@ -141,6 +136,8 @@
 
                 sendMessage();
                 e.preventDefault();
+                $("#scroller").append;
+                $('#scroller').animate({ scrollTop: $('#scroller').prop("scrollHeight") }, 300);
             });
         }
 

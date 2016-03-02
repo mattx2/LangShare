@@ -15,7 +15,21 @@
 
 
 <script type="text/javascript">
-/*
+
+    /*
+
+    $('#sendBtn').click(function () {
+
+        $("#scroller").append('#messages');
+
+        $('#scroller').animate({ scrollTop: $('#scroller').prop("scrollHeight") }, 300);
+
+    });
+
+    */
+
+
+    /*
     function getMessagesClick() {       
         var div = $("#messages");
         
@@ -33,6 +47,7 @@
         });
     }
 */
+
 </script>
 
 
@@ -43,6 +58,8 @@
 #scroller 
 {
     overflow:   auto;
+    overflow-y: auto;
+    margin-top: 8.5px;
     position:   relative;
     width:      70%;
     height:     400px;
@@ -50,6 +67,7 @@
     overflow-y: scroll;
     background-color: #f8f8f8;
     float: left;
+    display: block;
 }
 
 #userlist
@@ -63,6 +81,7 @@
     overflow-y: scroll;
     margin:0px;
     padding:5px;
+
 }
 
 
@@ -70,7 +89,7 @@
 
 #messages
 {
-    overflow-y:  hidden;
+    overflow-y: hidden;
     overflow-x: hidden;
     position:   relative;
     bottom:     auto;
@@ -118,9 +137,19 @@ ul li
 
 #txtMsg 
 {
-    width: 500px;
-    margin-left: 0px;
+    float: left;
+    width: 84%;
 }
+
+#btnSend
+{
+    float: right;
+    width: 15%;
+
+}
+
+
+
 
 </style>
 
