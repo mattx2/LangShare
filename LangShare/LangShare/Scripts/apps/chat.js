@@ -59,6 +59,9 @@
 
         chatHub.client.received = function (message) {
             viewModel.messages.push(new Message(message.sender, message.message, message.isPrivate));
+
+            // This gets called when a new message comes in.
+            $('#scroller').animate({ scrollTop: $('#scroller').prop("scrollHeight") }, 300);
         };
 
         chatHub.client.userConnected = function (username) {
@@ -102,13 +105,10 @@
 
 
                         // AUTO SCROLL FOR USERS
-                        var div = document.getElementById("userlist");
-                        // increase the scroll position by 10 px every 10th of a second
-                        setInterval(function () {
-                            // make sure it's not at the bottom
-                            if (div.scrollTop < div.scrollHeight - div.clientHeight)
-                                div.scrollTop += 10; // move down
-                        }, 100); // 100 milliseconds
+
+
+                        $("#userlist").append;
+                        $('#userlist').animate({ scrollTop: $('#userlist').prop("scrollHeight") }, 300);
                     });
                 });
 
